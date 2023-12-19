@@ -3,9 +3,12 @@ import { PORT, mongoDURL} from "./config.js"
 import mongoose from "mongoose";
 import { GymSchedule } from "./models/gymSchedule.js";
 import gymScheduleRoutes from "./Routes/gymScheduleRoutes.js"
+import cors from 'cors';
 const app = express();
 
+
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (request,response)=>{
     console.log("Hi");
